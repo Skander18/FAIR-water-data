@@ -1,0 +1,28 @@
+spring:
+  config:
+    activate:
+      on-profile: !dev
+  application:
+    name: fair-water-api
+  datasource:
+    url: jdbc:postgresql://localhost:5432/fairwater_db
+    username: fairwater_user
+    password: ${DB_PASSWORD:changeme}
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+# Configuration custom - Nouvelle structure
+custom:
+  data:
+    rdf4j:
+      repository:
+        url: http://localhost:8080/rdf4j-server
+        id: fairwater-repo
+    ogc:
+      sensorthings:
+        base-url: /api/v1.0
+        persistence-unit: hydrologyPU
+        cors:
+          allowed-origins: "https://app.fairwater.org"

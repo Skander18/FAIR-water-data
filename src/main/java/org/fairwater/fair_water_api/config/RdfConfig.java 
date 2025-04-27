@@ -1,0 +1,17 @@
+package org.fairwater.fair_water_api.config;
+
+import org.eclipse.rdf4j.repository.Repository;
+import org.eclipse.rdf4j.repository.http.HTTPRepository;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class RdfConfig {
+    
+    @Bean
+    public Repository rdfRepository() {
+        HTTPRepository repo = new HTTPRepository("http://localhost:8080/rdf4j-server", "fairwater-repo");
+        repo.init();
+        return repo;
+    }
+}

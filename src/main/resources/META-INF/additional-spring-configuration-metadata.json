@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "custom.rdf4j.repository.url",
+  "type": "java.lang.String",
+  "description": "A description for 'custom.rdf4j.repository.url'"
+}]}
